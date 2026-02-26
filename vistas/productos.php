@@ -1,19 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 
-<?php 
-    include('navbar.inc.php');
+<?php
+include('head.inc.php')
 ?>
 
-<body>
-    <h1>Productos</h1>
-    <a href="listadoProductos.php">listado de Productos</a>
-    <a href="crearProducto.php">Agregar producto</a>
-    <a href="eliminarProducto.php">eliminar producto</a>
+<?php
+include('navbar.inc.php');
+?>
+
+<body class="bg-light">
+
+    <div class="container d-flex flex-column justify-content-center align-items-center"
+        style="min-height: 70vh;">
+
+        <h1 class="m-5">Productos</h1>
+
+        <div class="w-100" style="max-width: 500px;">
+
+            <div class="d-grid gap-4">
+
+                <a href="listadoProductos.php"
+                    class="btn btn-outline-primary py-4 fs-4 fw-semibold">
+                    Listado de Productos
+                </a>
+
+                <a href="crearProducto.php"
+                    class="btn btn-success py-4 fs-4 fw-semibold">
+                    Agregar Producto
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
+
 </html>

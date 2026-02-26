@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+main{
+    padding: 20px;
+    height: 100vh;
+}
+
+table{
+    background: none;
+}

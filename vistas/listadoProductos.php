@@ -5,29 +5,30 @@ require_once('../controladores/producto.controlador.php');
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<?php 
+    include('head.inc.php')
+?>
 
 <?php
-include('navbar.inc.php')
+    include('navbar.inc.php')
 ?>
 
 <body>
-    <table>
-        <thead>
-            <th>
-                <tr>
-                    <td>ID</td>
-                    <td>Nombre</td>
-                    <td>Descripcion</td>
-                    <td>Cateogira</td>
-                    <td>Precio</td>
-                    <td>Stock</td>
-                </tr>
-            </th>
+    <main>
+        <h1 class="mb-4 mt-4 text-center">Listado de Productos</h1>
+
+    <table class="table table-striped table-hover table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Categoria</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
         <tbody>
             <?php
                 $productos = obtenerProductos();
@@ -40,14 +41,23 @@ include('navbar.inc.php')
                 <td><?= $producto->getCategoria()?></td>
                 <td><?= $producto->getPrecio()?></td>
                 <td><?= $producto->getStock()?></td>
+                <td class="d-flex">
+                    <form action="editarProducto.php" method="GET" class="m-2">
+                        <input type="submit" class="btn btn-warning" value="Editar">
+                        <input name="idProducto" value=<?= $producto->getId() ?> hidden>
+                    </form>
+                    <form action="eliminarProducto.php" method="GET" class="m-2">
+                        <input type="submit" class="btn btn-danger" value="Eliminar">
+                        <input name="idProducto" value=<?= $producto->getId() ?> hidden>
+                    </form>
+                </td>
             </tr>
             <?php
-                endforeach
+                endforeach;
             ?>
         </tbody>
-
-        </thead>
     </table>
+    </main>
 </body>
 
 </html>
