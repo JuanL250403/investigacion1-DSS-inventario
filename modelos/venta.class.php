@@ -49,7 +49,7 @@ class Venta {
             return "cantidad debe ser numerica";
         }
 
-        if(!is_double($cantidad)){
+        if(is_double($cantidad)){
             return "cantidad no puede ser decimal";
         }
         $this->cantidad = $cantidad;
