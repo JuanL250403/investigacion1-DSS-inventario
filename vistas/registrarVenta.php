@@ -100,7 +100,7 @@ include('navbar.inc.php')
                         <button type="submit" name="vender" class="btn btn-success m-2">
                             Realizar venta
                         </button>
-                        <a href="listadoVentas.php" name="crear" class="btn btn-secondary m-2">
+                        <a href="listadoVentas.php" class="btn btn-secondary m-2">
                             Ver ventas
                         </a>
                     </div>

@@ -20,8 +20,8 @@ function realizarVenta($idProducto, $venta)
         return "la cantidad a comprar no puede ser nula";
     } elseif ($venta->getCantidad() < 0) {
         return "la cantidad a comprar no puede ser negativa";
-    } elseif (is_numeric($venta->getCantidad())){
-        return "";
+    } elseif (!is_numeric($venta->getCantidad())){
+        return "cantidad debe ser numerica";
     }
 
     session_start();
