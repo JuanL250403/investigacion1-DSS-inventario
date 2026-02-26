@@ -21,6 +21,7 @@ include('navbar.inc.php')
 
 <body>
     <?php
+    $validado = true;
     $hayPost = isset($_POST['vender']);
 
     $id = isset($_POST["id"]) ? $_POST["id"] : "";
@@ -55,7 +56,14 @@ include('navbar.inc.php')
     }
 
     if ($hayPost):
+
         $respuesta = realizarVenta($id, $venta);
+
+        if($respuesta === 'venta realizada'){
+            $venta = new Venta();
+            $id = null;
+            $hayPost = false;
+        }
 
     ?>
         <?php if (!empty($respuesta)) : ?>

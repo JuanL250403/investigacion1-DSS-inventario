@@ -56,7 +56,7 @@ function realizarVenta($idProducto, $venta)
     }
 
     if(!$productoEncontrado){
-        return "producto con $idProducto no existente";
+        return "producto con id: $idProducto no existente";
     }
 
     $_SESSION["productos"] = $productos;
